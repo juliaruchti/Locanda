@@ -1,9 +1,74 @@
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Jost", "Poppins", Arial, Helvetica, sans-serif;
+  margin: none;
+  padding: none;
+  text-decoration: none;
 }
 
 header,
 footer {
-  background-color: lightblue;
-  padding: 12px;
+  padding: 4vw;
+}
+
+footer {
+  border-top: 2px #adadad;
+}
+
+div.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  margin: 4vw 20vw 0 20vw;
+}
+
+.logo {
+  width: 12vw;
+}
+
+h1 {
+  font-size: 60pt;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 25pt;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 15pt;
+  color: #adadad;
+  font-weight: 400;
+}
+
+p {
+  font-size: 15pt;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.blog_img {
+  max-width: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+button.new_post {
+  border: 2px;
+  border-color: white;
+  border-radius: 75px;
+  font-size: 18pt;
+  background-color: #badfec;
+  padding: 15px 30px;
+}
+
+button.new_post:hover {
+  border-color: #367a93;
+}
+
+.button_centered {
+  display: flex;
+  justify-content: center;
 }
