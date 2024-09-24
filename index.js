@@ -1,11 +1,11 @@
 import { createApp } from "./config.js";
 
 const app = createApp({
-  user: "autumn_star_7622",
-  host: "168.119.168.41",
-  database: "demo",
-  password: "uaioysdfjoysfdf",
-  port: 18324,
+  user: "cold_wildflower_553",
+  host: "bbz.cloud",
+  database: "cold_wildflower_553",
+  password: "e43a7bc0df943746649cb95568bab042",
+  port: 30211,
 });
 
 /* Startseite */
@@ -15,7 +15,8 @@ app.get("/", async function (req, res) {
 
 /* Feed */
 app.get("/feed", async function (req, res) {
-  res.render("feed", {});
+  const users = await app.locals.pool.query("SELECT * FROM posts");
+  res.render("feed", { posts: posts.rows });
 });
 
 /* Blog */
@@ -30,7 +31,8 @@ app.get("/favourites", async function (req, res) {
 
 /* Account */
 app.get("/account", async function (req, res) {
-  res.render("account", {});
+  const users = await app.locals.pool.query("SELECT * FROM users");
+  res.render("account", { users: users.rows });
 });
 
 /* Impressum */

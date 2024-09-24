@@ -1,6 +1,10 @@
 <h1>Dein Account 🏡</h1>
-<p>Hey @USERNAME<br />
+<p>Hey $username<br />
   Hier kannst du deinen Account managen.</p>
+
+{{#users}}
+  <b>{{username}}</b>
+{{/users}}
 
 <h2>Passwort ändern</h2>
 <h2>Konto löschen</h2>
