@@ -1,20 +1,15 @@
-<h1>Der grandiose Grand Canyon</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio
-  vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat
-  at risus bibendum congue. Sed fringilla convallis libero, sit amet suscipit
-  justo tempor ac. Donec nec metus auctor, finibus purus vel, efficitur eros.
-  Duis ultricies turpis non libero dignissim, nec facilisis mauris vehicula.
-  Integer commodo sem at. Lorem ipsum dolor sit amet, consectetur adipiscing
-  elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod
-  malesuada. Nullam ac erat at risus bibendum congue. Sed fringilla convallis
-  libero, sit amet suscipit justo tempor ac. Donec nec metus auctor, finibus
-  purus vel, efficitur eros. Duis ultricies turpis non libero dignissim, nec
-  facilisis mauris vehicula. Integer commodo sem at.</p>
+{{#posts}}
 
-<div>
-  <img
-    class="blog_img"
-    src="/assets/leon-liu-_0aOFIW34rw-unsplash.jpg"
-    alt="GrandCanyon"
-  />
-</div>
+  <h1>{{title}}</h1>
+  <p>{{contents}}</p>
+
+  <h6>@{{username}}</h6>
+
+  <div>
+    <img
+      class="blog_img"
+      src="/assets/leon-liu-_0aOFIW34rw-unsplash.jpg"
+      alt="GrandCanyon"
+    />
+  </div>
+{{/posts}}

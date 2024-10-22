@@ -15,23 +15,41 @@ app.get("/", async function (req, res) {
 
 /* Feed */
 app.get("/feed", async function (req, res) {
-  const posts = await app.locals.pool.query("SELECT * FROM posts");
-  res.render("feed", { posts: posts.rows });
+  const posts = await app.locals.pool.query(
+    "SELECT posts.*, users.username FROM posts INNER JOIN users ON posts.user_id = users.id;"
+  );
+  const images = await app.locals.pool.query("SELECT * FROM images");
+  res.render("feed", {
+    posts: posts.rows,
+    images: images.rows,
+  });
 });
 
 /* Blog */
-app.get("/blog", async function (req, res) {
-  res.render("blog", {});
+app.get("/blog/:id", async function (req, res) {
+  const posts = await app.locals.pool.query(
+    `SELECT posts.*, users.username FROM posts INNER JOIN users ON posts.user_id = users.id WHERE posts.id = ${req.params.id};`
+  );
+  const images = await app.locals.pool.query("SELECT * FROM images");
+  res.render("blog", {
+    posts: posts.rows,
+    images: images.rows,
+  });
 });
 
 /* Favourites */
 app.get("/favourites", async function (req, res) {
-  res.render("favourites", {});
+  const favourites = await app.locals.pool.query("SELECT * FROM favourites");
+  const images = await app.locals.pool.query("SELECT * FROM images");
+  res.render("favourites", {
+    favourites: favourites.rows,
+    images: images.rows,
+  });
 });
 
 /* Account */
 app.get("/account", async function (req, res) {
-  const users = await app.locals.pool.query("SELECT * FROM users");
+  const users = await app.locals.pool.query("SELECT * FROM account");
   res.render("account", { users: users.rows });
 });
 

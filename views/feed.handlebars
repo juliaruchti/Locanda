@@ -1,13 +1,21 @@
 <h1>Willkommen bei TripTales! 👋</h1>
 <h2>Dokumentiere deine Reisen und teile deine Abenteuer mit einer Community von
   Reisenden. Lass dich inspirieren oder schreibe gleich selbst von deinen
-  Abenteuern...</h2>
+  Abenteuern ...</h2>
 
 <div class="button_centered">
-  <button class="new_post">Post erstellen</button>
+  <button href="/views/blog.handlebars" class="new_post">Post erstellen</button>
 </div>
 
-{{#posts}}
-  {{title}}
-  {{country}}
-{{/posts}}
+<div class="flex">
+  {{#posts}}
+  <a href="/views/favourites.handlebars">
+    <div class="post">
+      <img class="image" src="{{images}}" alt="Bild">
+      <h3 class="post-title">{{title}}</h2>
+        <h6 class="post-username">@{{username}}</h6>
+      <p class="post-country">{{country}}</p>
+    </div>
+  {{/posts}}
+</a>
+</div>
