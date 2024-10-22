@@ -15,7 +15,7 @@ app.get("/", async function (req, res) {
 
 /* Feed */
 app.get("/feed", async function (req, res) {
-  const users = await app.locals.pool.query("SELECT * FROM posts");
+  const posts = await app.locals.pool.query("SELECT * FROM posts");
   res.render("feed", { posts: posts.rows });
 });
 
