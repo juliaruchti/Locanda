@@ -1,11 +1,21 @@
-<h1>Hallo Du 🌟</h1>
+<h1>Willkommen bei TripTales! 👋</h1>
+<h2>Dokumentiere deine Reisen und teile deine Abenteuer mit einer Community von
+  Reisenden. Lass dich inspirieren oder schreibe gleich selbst von deinen
+  Abenteuern ...</h2>
 
-<p>Erstelle einen Account, um Inhalte anderer zu sehen und deine eigenen Beiträge zu kreieren.</p>
+<div class="button_centered">
+  <button class="new_post"><a href="/new_post">Post erstellen</a></button>
+</div>
 
-{{> sign_up}}
-
-
-
-<p>Du hast bereits ein Konto? Logge dich ein.</p>
-
-{{> sign_in}}
+<div class="flex">
+  {{#posts}}
+  <a href="/blog/{{id}}">
+    <div class="post">
+      <img class="image" src="{{images}}" alt="Bild">
+      <h3 class="post-title">{{title}}</h2>
+        <h6 class="post-username">@{{username}}</h6>
+      <p class="post-country">{{country}}</p>
+    </div>
+  {{/posts}}
+</a>
+</div>

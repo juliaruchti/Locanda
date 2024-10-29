@@ -1,0 +1,31 @@
+<form action="/create_post" method="post">
+
+  <!-- Titel des Posts -->
+  <label for="title">Titel:</label>
+  <input type="text" id="title" name="title" required />
+  <br /><br />
+
+  <!-- Inhalt des Posts -->
+  <label for="contents">Inhalt:</label>
+  <textarea
+    id="contents"
+    name="contents"
+    rows="4"
+    cols="50"
+    required
+  ></textarea>
+  <br /><br />
+
+  <!-- Land (Optional, je nach Bedarf) -->
+  <label for="country">Land:</label>
+  <input type="text" id="country" name="country" />
+  <br /><br />
+
+  <!-- Bildbeschreibung -->
+  <label for="caption">Bildbeschreibung:</label>
+  <input type="text" id="caption" name="caption" />
+  <br /><br />
+
+  <!-- Submit-Button -->
+  <button type="submit">Post erstellen</button>
+</form>
