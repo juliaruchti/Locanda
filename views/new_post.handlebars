@@ -1,4 +1,4 @@
-<form action="/create_post" method="post">
+<form action="/create_post" enctype="multipart/form-data" method="post">
 
   <!-- Titel des Posts -->
   <label for="title">Titel:</label>
@@ -19,6 +19,11 @@
   <!-- Land (Optional, je nach Bedarf) -->
   <label for="country">Land:</label>
   <input type="text" id="country" name="country" />
+  <br /><br />
+
+  <!-- Bild -->
+  <label for="image">Bild:</label>
+  <input type="file" id="image" name="image" />
   <br /><br />
 
   <!-- Bildbeschreibung -->

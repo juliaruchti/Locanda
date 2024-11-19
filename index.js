@@ -1,4 +1,4 @@
-import { createApp } from "./config.js";
+import { createApp, upload } from "./config.js";
 
 const app = createApp({
   user: "cold_wildflower_553",
@@ -26,10 +26,8 @@ app.get("/", async function (req, res) {
   const posts = await app.locals.pool.query(
     "SELECT posts.*, users.username FROM posts INNER JOIN users ON posts.user_id = users.id;"
   );
-  const images = await app.locals.pool.query("SELECT * FROM images");
   res.render("start", {
     posts: posts.rows,
-    images: images.rows,
   });
 });
 
@@ -54,14 +52,20 @@ app.get("/new_post", async function (req, res) {
   res.render("new_post", {});
 });
 
-app.post("/create_post", async function (req, res) {
+app.post("/create_post", upload.single("image"), async function (req, res) {
   if (!req.session.userid) {
     res.redirect("/login");
     return;
   }
   await app.locals.pool.query(
-    "INSERT INTO posts (title, contents, country, created_at) VALUES ($1, $2, $3, current_timestamp)",
-    [req.body.title, req.body.contents, req.body.country]
+    "INSERT INTO posts (title, contents, country, image, caption, created_at) VALUES ($1, $2, $3, $4, $5, current_timestamp)",
+    [
+      req.body.title,
+      req.body.contents,
+      req.body.country,
+      req.file.filename,
+      req.body.caption,
+    ]
   );
   res.redirect("/");
 });
