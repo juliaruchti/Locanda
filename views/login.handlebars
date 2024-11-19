@@ -1,11 +1,15 @@
 <h1>Hallo Du 🌟</h1>
 
-<p>Erstelle einen Account, um Inhalte anderer zu sehen und deine eigenen Beiträge zu kreieren.</p>
-
-{{> sign_up}}
-
-
+<p>Erstelle einen Account, um Inhalte anderer zu sehen und deine eigenen
+  Beiträge zu kreieren.</p>
 
 <p>Du hast bereits ein Konto? Logge dich ein.</p>
 
-{{> sign_in}}
+<form action="/login" method="POST">
+  E-Mail:
+  <input name="username" type="text" /><br />
+  Passwort:
+  <input name="password" type="password" /><br />
+  <input type="submit" value="Anmelden" />
+</form>
+<a href="/register" class="button">Registrieren</a>
