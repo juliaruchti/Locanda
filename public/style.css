@@ -154,7 +154,7 @@ button.new_post:hover {
 /* form */
 
 form input {
-  border: 2px #badfec solid;
+  border: 2px solid;
   margin: 10px 0 10px 0;
   padding: 10px 10px 10px 10px;
   border-radius: 75px;
