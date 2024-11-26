@@ -1,9 +1,8 @@
 <h1>Deine Favourites 💛</h1>
-<p>Dokumentiere deine Reisen und teile deine Abenteuer mit einer Community von
-  Reisenden. Lass dich inspirieren und entdecke neue Reiseziele!</p>
+<p class="spacer">Hier findest du deine Favoriten! Kehre immer wieder zurück und hole dir Inspiration für deine eigenen Reisen.</p>
   <div class="flex">
 
-    {{#posts}}
+    {{#favourites}}
     <a href="/views/favourites.handlebars">
       <div class="post">
         <img class="image" src="{{images}}" alt="Bild">
@@ -11,6 +10,7 @@
           <h6 class="post-username">@{{username}}</h6>
         <p class="post-country">{{country}}</p>
       </div>
-    {{/posts}}
+    {{/favourites}}
   </a>
   </div>
+

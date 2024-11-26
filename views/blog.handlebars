@@ -5,6 +5,12 @@
 
   <h6>@{{username}}</h6>
 
+  <div class="button_right">
+    <form action="/like/{{id}}" enctype="multipart/form-data" method="POST">
+      <input id="save" type="submit" value="liken" />
+    </form>
+  </div>
+
   <div>
     <img class="blog_img" src="{{images}}" alt="{{caption}}" />
   </div>

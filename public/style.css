@@ -114,8 +114,6 @@ p {
 }
 
 button.new_post {
-  border: 2px;
-  border-color: white;
   border-radius: 75px;
   font-size: 18pt;
   background-color: #badfec;
@@ -124,12 +122,33 @@ button.new_post {
 }
 
 button.new_post:hover {
+  border: 2px;
+  border-style: solid;
   border-color: #367a93;
 }
 
 .button_centered {
   display: flex;
   justify-content: center;
+}
+
+#save {
+  border-radius: 75px;
+  font-size: 18pt;
+  background-color: #ffd7f0;
+  padding: 15px 30px;
+  margin: 0 0 100px;
+}
+
+#save:hover {
+  border: 2px;
+  border-style: solid;
+  border-color: #ac5d8f;
+}
+
+.button_right {
+  display: flex;
+  justify-content: right;
 }
 
 /* form */
@@ -139,5 +158,14 @@ form input {
   margin: 10px 0 10px 0;
   padding: 10px 10px 10px 10px;
   border-radius: 75px;
-  color: #adadad;
+  background-color: white;
+  color: black;
+}
+
+.no_border {
+  border: none;
+}
+
+.spacer {
+  padding-bottom: 100px;
 }
