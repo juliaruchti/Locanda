@@ -1,16 +1,17 @@
 <h1>Deine Favourites 💛</h1>
 <p class="spacer">Hier findest du deine Favoriten! Kehre immer wieder zurück und hole dir Inspiration für deine eigenen Reisen.</p>
-  <div class="flex">
 
-    {{#favourites}}
-    <a href="/views/favourites.handlebars">
-      <div class="post">
-        <img class="image" src="{{images}}" alt="Bild">
-        <h3 class="post-title">{{title}}</h2>
-          <h6 class="post-username">@{{username}}</h6>
-        <p class="post-country">{{country}}</p>
-      </div>
-    {{/favourites}}
-  </a>
-  </div>
+
+<div class="flex">
+  {{#favourites}}
+  <a href="/blog/{{id}}">
+    <div class="post">
+      <img class="image" src="/uploads/{{image}}" alt="Bild">
+      <h3 class="post-title">{{title}}</h2>
+        <h6 class="post-username">@{{username}}</h6>
+      <p class="post-country">{{country}}</p>
+    </div>
+  {{/favourites}}
+</a>
+</div>
 

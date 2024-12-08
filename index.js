@@ -56,13 +56,14 @@ app.post("/create_post", upload.single("image"), async function (req, res) {
     return;
   }
   await app.locals.pool.query(
-    "INSERT INTO posts (title, contents, country, image, caption, created_at) VALUES ($1, $2, $3, $4, $5, current_timestamp)",
+    "INSERT INTO posts (title, contents, country, image, caption, user_id, created_at) VALUES ($1, $2, $3, $4, $5, $6, current_timestamp)",
     [
       req.body.title,
       req.body.contents,
       req.body.country,
       req.file.filename,
       req.body.caption,
+      req.session.userid,
     ]
   );
   res.redirect("/");
@@ -88,7 +89,10 @@ app.get("/favourites", async function (req, res) {
     res.redirect("/login");
     return;
   }
-  const favourites = await app.locals.pool.query("SELECT * FROM favourites");
+  const favourites = await app.locals.pool.query(
+    "SELECT favourites.*, posts.*, users.username FROM favourites INNER JOIN posts ON favourites.post_id = posts.id INNER JOIN users ON posts.user_id = users.id  WHERE favourites.user_id = $1;",
+    [req.session.userid]
+  );
   res.render("favourites", {
     favourites: favourites.rows,
   });
@@ -103,7 +107,7 @@ app.post("/like/:id", async function (req, res) {
     "INSERT INTO favourites (post_id, user_id) VALUES ($1, $2)",
     [req.params.id, req.session.userid]
   );
-  res.redirect(`/posts/${req.params.id}`);
+  res.redirect(`/blog/${req.params.id}`);
 });
 
 // Likes anzeigen:
