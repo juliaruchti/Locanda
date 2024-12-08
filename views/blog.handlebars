@@ -1,7 +1,6 @@
 {{#posts}}
 
   <h1>{{title}}</h1>
-  <p>{{contents}}</p>
 
   <h6>@{{username}}</h6>
 
@@ -11,7 +10,11 @@
     </form>
   </div>
 
-  <div>
+  <div class="image_caption">
     <img class="blog_img" src="/uploads/{{image}}" alt="{{caption}}" />
+    {{caption}}
   </div>
+
+  <p class="contents_p">{{contents}}</p>
+
 {{/posts}}

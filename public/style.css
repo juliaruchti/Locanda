@@ -108,9 +108,18 @@ p {
 }
 
 .blog_img {
-  max-width: 50vw;
+  max-width: 59vw;
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
+}
+
+.contents_p {
+  margin-bottom: 200px;
+}
+
+.image_caption {
+  margin-bottom: 60px;
 }
 
 button.new_post {
@@ -149,6 +158,7 @@ button.new_post:hover {
 .button_right {
   display: flex;
   justify-content: right;
+  max-height: 200px;
 }
 
 /* form */
