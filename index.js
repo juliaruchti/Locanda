@@ -13,6 +13,10 @@ app.get("/", async function (req, res) {
   res.render("start");
 });
 
+app.get("/about", async function (req, res) {
+  res.render("about");
+});
+
 /* Impressum */
 app.get("/impressum", async function (req, res) {
   res.render("impressum");
