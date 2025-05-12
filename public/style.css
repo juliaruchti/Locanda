@@ -24,20 +24,24 @@ p {
   margin: 0 10% 0 10%;
 }
 
+p {
+  text-align: left;
+  color: var(--color-gray);
+}
+
 header {
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   padding: 15px;
   background-color: white;
   border-bottom: #8f3e25 0.5px solid;
 }
 
-.nav {
+nav {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 header ul {
@@ -81,7 +85,6 @@ img {
 h1 {
   color: var(--color-red);
   font-size: 40pt;
-  margin: 0;
   text-align: left;
 }
 
@@ -149,11 +152,6 @@ footer a {
   text-decoration: none;
 }
 
-p {
-  text-align: right;
-  color: var(--color-gray);
-}
-
 p a {
   color: var(--color-gray);
   text-decoration: underline;
@@ -168,4 +166,65 @@ p a {
   text-align: center;
   text-decoration: none;
   font-size: 16px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-right: 150px;
+}
+
+.portrait {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.info-section {
+  min-height: 300px;
+}
+
+.title {
+  max-width: 600px;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.kontakt-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.kontakt-info {
+  display: flex;
+  flex-direction: row;
+  margin: 0 50px 0 140px;
+  justify-content: space-between;
+}
+
+.kontaktangaben {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 20px;
+}
+
+.kontakt-info-info {
+  display: flex;
+  align-items: center;
+}
+
+.kontakt-info-info img {
+  height: 20px;
+  object-fit: contain;
+  width: auto;
+  margin-right: 10px;
+}
+
+.map {
+  width: 80%;
+  height: 150px;
+  position: relative;
+  
 }
