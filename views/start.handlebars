@@ -46,7 +46,30 @@
       Nehmt bitte Platz, damit eure kulinarische Reise nach Italien beginnen kann und wir eure Geschmackserlebnisse zu Mario Mondellos Einzigartigkeit bringen dürfen. Herzlich Willkommen im Restaurant “Locanda Sainte Sophie“</p>
   </section>
 
-<div class="stoerer"><a href="https://6nnjht-3010.csb.app/reservation"><img src="/assets/stoerer.png" alt="Tisch reservieren"></a></div>
+<!-- stoerer -->
+
+  <div class="stoerer">
+    <a href="https://6nnjht-3010.csb.app/reservation">
+      <img src="/assets/stoerer.png" alt="Tisch reservieren" id="stoerer-img">
+    </a>
+  </div>
+
+  <script>
+    let lastScroll = 0;
+    let rotation = 0;
+  
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      const delta = currentScroll - lastScroll;
+  
+      // Passe den Multiplikator ggf. an, um die Rotationsgeschwindigkeit zu steuern
+      rotation += delta * 0.2;
+      lastScroll = currentScroll;
+  
+      const stoererImg = document.getElementById("stoerer-img");
+      stoererImg.style.transform = `rotate(${rotation}deg)`;
+    });
+  </script>
 
 
 </body>
