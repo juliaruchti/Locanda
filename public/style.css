@@ -401,6 +401,7 @@ body {
 
 #geschichte a.button {
   margin-right: 12.5%;
+  text-decoration: none;
 }
 
 .info-section a:not(.info-section) {
