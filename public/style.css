@@ -199,16 +199,22 @@ p a {
   height: 120;
   border-radius: 50%;
   padding: 20px;
-  object-position: center 35%;
+  object-position: center 20%;
 }
 
-.about {
+.about-portraits {
+  display: flex;
+  margin-left: 10%;
   align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .portraits {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .portraits figcaption {
@@ -288,7 +294,7 @@ body {
 
 .stoerer img:hover,
 #geschichte a.button:hover,
-.formbold-btn:hover {
+.form-button:hover {
   filter: brightness(1.2);
   transition: 0.2s ease;
 }
@@ -304,7 +310,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px;
+  padding-bottom: 48px;
 }
 
 .formbold-form-wrapper {
@@ -374,7 +380,8 @@ body {
   padding-top: 10px;
 }
 
-.geschichte-text {
+.geschichte-text,
+.about {
   text-align: justify;
   padding-bottom: 10px;
 }
@@ -409,11 +416,17 @@ body {
   color: white;
   padding: 15px 32px;
   border-radius: 5px;
-  border-color: white;
+  border: none;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  height: 30px;
+  margin-top: 20px;
+
   display: flex;
   align-items: center;
+}
+
+.about {
+  align-items: center;
+  padding-right: 0;
 }
